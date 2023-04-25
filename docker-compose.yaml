@@ -5,12 +5,15 @@ services:
     build:
       context: .
     ports:
-      - "3000:3000"
+      - "443:3000"
     depends_on:
       - redis
     env_file:
       - dotenv
     command: python -m app.app
+    volumes:
+      - /etc/letsencrypt/live/goerli-api.beradrome.com/fullchain.pem:/etc/ssl/certs/fullchain.pem:ro
+      - /etc/letsencrypt/live/goerli-api.beradrome.com/privkey.pem:/etc/ssl/private/privkey.pem:ro
 
   redis:
     image: redis:alpine
