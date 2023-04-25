@@ -9,6 +9,6 @@ COPY ./ /app
 
 RUN pip install -e .
 
-EXPOSE 443
+EXPOSE 3000
 
 CMD ["python", "-m", "app.app"]
