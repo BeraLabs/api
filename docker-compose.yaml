@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+  python:
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
+    env_file:
+      - dotenv
+    command: python -m app.app
+
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  syncer:
+    build:
+      context: .
+    env_file:
+      - dotenv
+    command: sh -c 'python -m app.pairs.syncer'
+
+volumes:
+  redis_data:
