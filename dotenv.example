@@ -1,0 +1,24 @@
+PORT=3000
+REDIS_URL=redis://redis:6379/0 
+# redis://localhost:6379/0
+WEB3_PROVIDER_URI=https://arb-goerli.g.alchemy.com/v2/btdnuaYISybflJ2dpbt3SyOzYc1ZviEP
+ROUTER_ADDRESS=0xe9015C0a95C684217fd2C50859943b6Cc8CA6490
+FACTORY_ADDRESS=0x3a09318b5846851982E45d9D8Eeb1A01E9A585C2
+VOTER_ADDRESS=0x382CC9593e32390C2d46E6efd5833E89BEAdAdEd
+VE_ADDRESS=0x64Aa491878089E38b066B31E59933Da32744f0f7
+REWARDS_DIST_ADDRESS=0x8ad92Da48e2B7Aa01CFC831256c734Bd615cC491
+WRAPPED_BRIBE_FACTORY_ADDRESS=0xE3D5c8382010621F65fAEb461770987B4c26b183
+# Valid tokenlists.org lists. Use | to separate URIs.
+TOKENLISTS=https://raw.githubusercontent.com/berabuilder/tokenlist/main/tokenlist.json
+# These two will be fetched from the tokenlist
+DEFAULT_TOKEN_ADDRESS=0x73e066b076DdBe913e66e554e20Bf638D041eee2
+# USDC/USDT or equivalent...
+STABLE_TOKEN_ADDRESS=0x319411530D8275BE65bfaE9CD80CDCD4B68f02Af
+# These will be used for multi-hop swaps, comma-separated addresses
+ROUTE_TOKEN_ADDRESSES=0x73e066b076DdBe913e66e554e20Bf638D041eee2,0x2698D7faCa7Fa9E2AA205A13a3e6a80ADbfF7C46,0xEe01c0CD76354C383B8c7B4e65EA88D00B06f36f
+# Seconds between on-chain syncups
+SYNC_WAIT_SECONDS=20
+# Tokens we should just ignore...
+IGNORED_TOKEN_ADDRESSES=0xDeadDeAddeAddEAddeadDEaDDEAdDeaDDeAD0000
+# Maximum number of threads used by syncer, will default to 4 if not set
+SYNC_MAX_THREADS=1

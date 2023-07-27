@@ -87,12 +87,12 @@ class Pair(Model):
     @classmethod
     def chain_addresses(cls):
         """Fetches pairs/pools from chain."""
-        pairs_count = Call(FACTORY_ADDRESS, 'allPairsLength()(uint256)')()
+        pairs_count = Call(FACTORY_ADDRESS, 'allPoolsLength()(uint256)')()
 
         pairs_multi = Multicall([
             Call(
                 FACTORY_ADDRESS,
-                ['allPairs(uint256)(address)', idx],
+                ['allPools(uint256)(address)', idx],
                 [[idx, None]]
             )
             for idx in range(0, pairs_count)
